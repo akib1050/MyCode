@@ -29,9 +29,9 @@ int main()
     int n;
     cin>>n;
     seive(n);
-    for(int i=2; i<=n; i++)
+    for(int i=3; i<=n; i+=2)
     {
-        if(prime[i]==false && i%2)cout<<i<<" ";
+        if(prime[i]==false)cout<<i<<" ";
     }
 
     int m;
