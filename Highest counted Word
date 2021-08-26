@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<set>
+#include<algorithm>
+#include<map>
+#include<string.h>
+
+using namespace std;
+
+#define rep(i,n) for(int i=0; i<(n); i++)
+#define T int t, q=0; scanf("%d", &t); while(q++<t)
+#define ll long long
+#define FAST ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+ll x,y,z,r,a=0,b=0,c=0,d=0,sum,ans,total,cnt,n,m,k,p,kase,i;
+#define PI acos(-1)
+#define N 100001
+#define MX 1000000001
+#define vs    vector<string>
+#define pi 3.14159265358979323846
+
+
+
+//SET PRECIOSION   cout << fixed ;  cout << setprecision(n) << ans << endl;
+
+
+int main()
+{
+    T
+    {
+
+        map<string,ll>mp;
+
+        string s,a;
+        char ch;
+        cin>>ch;
+        getline(cin,s);
+        s=ch+s;
+
+        n=s.size();
+        string temp;
+        vector<string>v;
+        for(auto i:s)
+        {
+            if(isspace(i))
+            {
+                v.push_back(temp);
+                temp.clear();
+            }
+            else temp+=i;
+        }
+        v.push_back(temp);
+        temp.clear();
+
+        for(auto i: v)mp[i]++;
+
+        pair<string , int>p;
+
+        c=0;
+        for(auto i:mp)
+        {
+            if(c<i.second)
+            {
+                p.first=i.first;
+                p.second=i.second;
+
+                c=i.second;
+            }
+        }
+
+        cout<<p.first<<" "<<p.second<<endl;
+
+    }
+}
+//Happy Coding (:
