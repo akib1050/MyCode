@@ -1,0 +1,82 @@
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+struct akibList
+{
+    int data;
+    struct akibList* next;
+};
+
+struct akibList* head;
+
+void insert(int val)
+{
+    struct akibList* temp= (struct akibList*)malloc(sizeof(struct akibList));
+
+    temp->data=val;
+    temp->next=NULL;
+
+    if(head==NULL)
+    {
+        head=temp;
+    }
+    else
+    {
+        struct akibList* t;
+        t=head;
+        while(t->next!=NULL)
+        {
+            t=t->next;
+        }
+        t->next=temp;
+    }
+}
+
+void print()
+{
+    struct akibList* tem;
+    tem=head;
+    while(tem!=NULL)
+    {
+        cout<<tem->data<<" ";
+        tem=tem->next;
+    }
+    cout<<endl;
+}
+
+void reverse()
+{
+    struct akibList* prevPtr;
+    struct akibList* nextPtr;
+    nextPtr=NULL;
+    prevPtr=NULL;
+
+    while(head!=NULL)
+    {
+        nextPtr=head->next;
+        head->next=prevPtr;
+        prevPtr=head;
+        head=nextPtr;
+    }
+    head=prevPtr;
+}
+
+int main()
+{
+    head=NULL;
+
+    insert(1);
+    insert(2);
+    insert(3);
+    insert(4);
+
+
+    print();
+
+    reverse();
+
+    print();
+
+}
