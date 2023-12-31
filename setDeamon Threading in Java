@@ -1,0 +1,39 @@
+
+public class MyClass {
+    public static void main(String args[])throws InterruptedException 
+    {
+           System.out.println("Main Thread Started!");
+
+           Akib obj =  new Akib();
+           obj.setDaemon(true);
+           obj.start();
+    
+
+           System.out.println("Main thread ended and x: "+obj.x);
+    }
+}
+
+
+
+class Akib extends Thread
+{
+    int x;
+    public void run()
+    {
+        for(int i=1;i<=1000000;i++)
+        {
+            x++;
+        }
+        System.out.println("My thread ended and x: " + x);
+        // main thread end hbr poreo eta kaj korse tai eke non Demon thread ba user thread bole
+    }
+  
+}
+
+
+
+/*
+Main Thread Started!
+Main thread ended and x: 0
+
+*/
