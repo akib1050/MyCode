@@ -1,0 +1,51 @@
+public class MyClass {
+    public static void main(String args[]) {
+        teacher t1 =  new teacher();
+        //System.out.println(t1.eat());
+        t1.eat();
+    }
+}
+
+class human
+{
+    public void eat()
+    {
+        System.out.println("Eating!!!");
+    }
+    public void sleep()
+    {
+        System.out.println("Sleeping!!!");
+    }
+    public void Speak()
+    {
+        System.out.println("Speaking!!!");
+    }
+    
+}
+class student extends human
+{
+    
+    public void eat()
+    {
+        System.out.println("Less Eating!!!");   
+    }
+     public void Read()
+    {
+        System.out.println("reading!!!");
+    }
+      public void Write()
+    {
+        System.out.println("writeing!!!");
+    }
+      public void Study()
+    {
+        System.out.println("Studying!!!");
+    }
+}
+class teacher extends student
+{
+      public void teach()
+    {
+        System.out.println("teaching!!!");
+    }
+}
