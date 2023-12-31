@@ -1,0 +1,65 @@
+
+public class MyClass {
+    public static void main(String args[])throws InterruptedException {
+        
+    myThread obj = new myThread();// main thread obj create korlo
+    //obj.start(); amra eta korte parbona karon eta Runnable interface k implement korse... Runnable er mddhe start func nai
+    
+    Thread x = new Thread(obj,"Thread1"); // amra thread er nam pass kore dte pari as a parameter hisebe
+    x.start();// ekhn etar sthe ei run() methode k linkup korte hbe tai amr myThread er obj ke parameter hisebe pass kore debo
+    String s=x.getName();// eta ekta string return korbe taii ekta string er mddhe niye tare print kore dei
+    System.out.println(s);
+    
+     
+ 
+     
+    }
+
+}
+
+// evhbei ek thread theke arek thread e giye kaj krbe
+//start eta dye thread k active kore fele then run() methode execute kore
+
+class myThread extends A implements Runnable
+{
+    public void run()
+    {
+        for(int i=0;i<10;i++)
+        {
+            
+         System.out.println(1);
+          try
+         {
+             Thread.sleep(100);
+         }
+         catch(InterruptedException e)
+         {
+             e.printStackTrace();
+         }
+         
+        }
+        
+        
+    }
+  
+}
+
+class A
+{
+    
+}
+
+/*
+OUTPUT
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+
+*/
