@@ -1,0 +1,31 @@
+public class MyClass {
+    public static void main(String args[]) {
+      
+      Kuet obj =  new Kuet();
+      System.out.println(obj.programmingClub);
+      obj.print();
+      
+      Aust obj1 =  new Aust();
+      obj1.print();
+    
+    }
+}
+
+
+class Aust
+{
+    String programmingClub="All coders";
+    public void print()
+    {
+         System.out.println("Welcome to Programming Club");
+    }
+}
+
+class Kuet extends Aust
+{
+    public void print()
+    {
+         System.out.println("Hi Welcome to Programming Club");
+    }
+    
+}
