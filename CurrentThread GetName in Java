@@ -1,0 +1,76 @@
+
+public class MyClass {
+    public static void main(String args[])throws InterruptedException {
+        
+    myThread obj = new myThread();// main thread obj create korlo
+    //obj.start(); amra eta korte parbona karon eta Runnable interface k implement korse... Runnable er mddhe start func nai
+    
+    Thread x = new Thread(obj,"Thread1"); // amra thread er nam pass kore dte pari as a parameter hisebe
+    x.start();// first e Run methode e gese karon ei start call hbr karone (As amder CPU onk fast) tai etay age chole gese next line e jabar age then 
+    // abr delay 100 ms er karone abr inside the main methode e chole asshe..!
+    String s=x.getName();// eta ekta string return korbe taii ekta string er mddhe niye tare print kore dei
+    System.out.println(s);
+    
+    Thread t2 = Thread.currentThread(); //as t2 is an obj of thread cls then sure it will have a getName methode.
+    String s2=t2.getName();
+    System.out.println("Inside the main methode: "+s2);
+    
+    
+ 
+     
+    }
+
+}
+
+// evhbei ek thread theke arek thread e giye kaj krbe
+//start eta dye thread k active kore fele then run() methode execute kore
+
+class myThread extends A implements Runnable
+{
+    public void run()
+    {
+        
+        System.out.println("Inside the Run methode: "+Thread.currentThread().getName());
+
+        for(int i=0;i<10;i++)
+        {
+            
+         System.out.println(1);
+          try
+         {
+             Thread.sleep(100);
+         }
+         catch(InterruptedException e)
+         {
+             e.printStackTrace();
+         }
+         
+        }
+        
+        
+    }
+  
+}
+
+class A
+{
+    
+}
+
+/*
+OUTPUT
+Thread1
+Inside the Run methode: Thread1
+1
+Inside the main methode: main
+1
+1
+1
+1
+1
+1
+1
+1
+1
+
+*/
