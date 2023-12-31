@@ -1,0 +1,34 @@
+public class MyClass {
+    public static void main(String args[]) {
+      
+      Aust obj =  new Aust();
+      obj.student=12;
+      
+      System.out.println(obj.student);
+      double xx=24.4;
+      obj.setCG(xx);
+      double cg=obj.getCG();
+      System.out.println(cg);
+      
+     
+    }
+}
+
+
+ class Aust
+{
+    public int student;
+    private double cg;
+    
+    public void setCG(double cg)
+    {
+        this.cg=cg;
+    }
+    
+    public double getCG()
+    {
+        return cg;
+    }
+    
+    
+}
